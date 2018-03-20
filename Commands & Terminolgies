@@ -1,0 +1,23 @@
+docker pull alpine:18.3          #pulls "alpine v18.3" from docker-registry
+docker run apline ls -l     #pulls & runs the container and streams the result of "ls -l"
+docker run apline -it /bin/sh  #interactive mode : "blocking call"
+    --name CNTR_NAME -e envVar1="value1" -d -P (d:detached-mode P:publish exposed port)
+    -p hostPort:dockerPort (port mapping override)
+docker rm -f image_name      # stop and remove the container instance
+
+docker images               #list of all images in local system
+docker ps -a                #all containers (in all states)
+docker port image_name      #lists all ports for the image
+
+docker build -t tag         #build image from "Dockerfile"
+docker push                 #push to docker cloud
+
+Terminologies:
+~~~~~~~~~~~~~
+"Dockerfile"            : file with list of commands to create image (by doker daemon)
+BaseImages: OS etc.     ChildImages: Built on base, add functionalities
+FROM                    
+RUN                     creating child layer (execute commands to install)
+COPY
+EXPOSE  8080            expose 8080 to external world (on host), needs -p 8080:56372 (56372 is port on docker which maps to 8080)   
+CMD                     starts container with the command
