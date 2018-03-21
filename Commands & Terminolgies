@@ -4,6 +4,9 @@ docker run apline -it /bin/sh  #interactive mode : "blocking call"
     --name CNTR_NAME -e envVar1="value1" -d -P (d:detached-mode P:publish exposed port)
     -p hostPort:dockerPort (port mapping override)
 docker rm -f image_name      # stop and remove the container instance
+docker container stop $(docker container ps -q) #stop all
+
+
 
 docker images               #list of all images in local system
 docker ps -a                #all containers (in all states)
