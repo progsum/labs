@@ -12,6 +12,10 @@ docker port image_name      #lists all ports for the image
 docker build -t tag         #build image from "Dockerfile"
 docker push                 #push to docker cloud
 
+docker image save img_name > image_name.tar
+docker image load -i image_name.tar
+docker logs container_name
+
 Terminologies:
 ~~~~~~~~~~~~~
 "Dockerfile"            : file with list of commands to create image (by doker daemon)
